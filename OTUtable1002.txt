@@ -1,0 +1,6 @@
+# Constructed from biom file																	
+#OTU ID	N1B	N1N	N2B	N2N	N3B	N3N	N4B	N4N	O1B	O1N	O2B	O2N	O3B	O3N	O4B	O4N	taxonomy
+Otu001	297479	313177	225348	224351	252714	275384	351185	272441	358246	208834	229840	242845	231723	241266	265571	210487	Bacteria; Firmicutes; Bacilli; Bacillales; Bacillaceae_2; Bacillaceae_2_unclassified
+Otu002	12036	15675	3646	12634	5548	15938	6957	14354	4607	27956	15665	29345	13533	37273	20055	29154	Bacteria; Actinobacteria; Actinobacteria; Actinomycetales; Nocardiopsaceae; Nocardiopsaceae_unclassified
+Otu003	30260	16106	48775	46236	46632	13047	35474	17640	29161	49852	41257	47261	28984	35637	33945	29327	Bacteria; Actinobacteria; Actinobacteria; Actinomycetales; Corynebacteriaceae; Corynebacterium
+Otu004	9775	6689	6539	4723	6953	4708	5156	8374	9988	9059	6672	6910	5250	7192	4425	7036	Bacteria; Actinobacteria; Actinobacteria; Actinomycetales; Actinomycetales_unclassified; Actinomycetales_unclassified
