@@ -1,0 +1,62 @@
+#FEI YAO
+#UTK
+#POULTRY LITTER 
+
+############################
+###Test my own data#########
+############################
+
+inputfile_poultry1002<-importQIIMEData("E:/data/broiler/project1/bacteria/OTUtable1002.txt")
+
+Tax4FunOutput_poultry<-Tax4Fun(inputfile_poultry1002, folderReferenceData, 
+                               fctProfiling = TRUE, 
+                               refProfile = "UProc", 
+                               shortReadMode = TRUE, 
+                               normCopyNo = TRUE)
+                               
+    #[1] "Invalid functional profiling method. Using default functional profiling method."
+    #Error in dimnames(x) <- dn : length of 'dimnames' [1] not equal to array extent
+    
+    #The file, OTUtable1002.txt, is not working. 
+    #Something run with the format, how to deal with the problem?
+    
+############################
+#########Solution 1#########
+############################
+#This solution can deal with someone's problem, even we suffered same error, but it's not working for me
+
+inputfile_poultry100200<-importQIIMEData("E:/data/broiler/project1/bacteria/OTUtable100200.txt")
+
+Tax4FunOutput_poultry100200<-Tax4Fun(inputfile_poultry100200, folderReferenceData, 
+                               fctProfiling = TRUE, 
+                               refProfile = "UProc", 
+                               shortReadMode = TRUE, 
+                               normCopyNo = TRUE)
+    
+    #[1] "Invalid functional profiling method. Using default functional profiling method."
+    #Error in dimnames(x) <- dn : length of 'dimnames' [1] not equal to array extent 
+    
+    #What's the difference between OTUtable1002 and OTUtable100200?
+    #1. The first row in OTUtable1002 was deleted, the row with "# Constructed from biom file".
+    #2. The second row was copied and pasted as a new row, the first unit in the new row was deleted, the unit with "#OTU ID"
+
+############################
+#########Solution 2#########
+############################
+##########working#######
+#What's the difference between OTUtable1002 and OTUtable100204?
+
+#In the taxonomy column, add ";" at the end.
+#For example
+#Before
+#Bacteria; Firmicutes; Bacilli; Bacillales; Bacillaceae_2; Bacillaceae_2_unclassified
+#After
+#Bacteria; Firmicutes; Bacilli; Bacillales; Bacillaceae_2; Bacillaceae_2_unclassified:
+
+######Tips##################
+
+Here are other solutions might be useful for you
+
+1. Replace # OTU ID using # OTU_ID, sometimes the underscore is very important
+
+2. Capitalize the t in taxonomy, replace taxonomy using Taxonomy
