@@ -1,0 +1,30 @@
+#FEI YAO
+#UTK
+#Tax4Fun
+#To predict the functions in poultry litter microbial community
+
+##################################################################
+##############Run the examples first##############################
+##################################################################
+
+library(Tax4Fun)
+    #Loading required package: Matrix
+    #Loading required package: qiimer
+    #Loading required package: biom
+
+folderReferenceData <-"E:/data/broiler/project1/bacteria/SILVA123/"
+
+inputfile<-importQIIMEData("E:/data/broiler/project1/bacteria/soil_0.97_table.txt")
+    #"soil_0.97_table.txt" is the standard file, you can download it from the Tax4Fun website#
+    #the example is working, but my own data is not working.#
+
+Tax4FunOutput<-Tax4Fun(inputfile, folderReferenceData, fctProfiling = TRUE, refProfile = "UProc", shortReadMode = TRUE, normCopyNo = TRUE)
+
+    #[1] "Invalid functional profiling method. Using default functional profiling method."
+    
+
+Tax4FunProfile <- Tax4FunOutput$Tax4FunProfile
+
+Tax4FunProfile <- data.frame(t(Tax4FunOutput$Tax4FunProfile))
+
+View(Tax4FunProfile)
